@@ -18,6 +18,7 @@ export class IOMonad<T> implements Monad<T> {
 }
 
 function getLine(): IOMonad<string> {
+  // 本当は標準入力から値を取らないといけないけど、サンプルなので固定値を返す
   return new IOMonad("hello");
 }
 
