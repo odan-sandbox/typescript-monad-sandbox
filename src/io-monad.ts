@@ -6,9 +6,9 @@ export class IOMonad<T> implements Monad<T> {
     this.value = value;
   }
 
-  public unit(): IOMonad<T> {
+  public unit(x: T): IOMonad<T> {
     // これいる？
-    return new IOMonad<T>(this.value);
+    return new IOMonad<T>(x);
   }
 
   public bind<S>(f: (x: T) => IOMonad<S>): IOMonad<S> {
