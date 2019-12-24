@@ -1,11 +1,4 @@
-export interface Monad<T> {
-  // 本当はこれを書きたかった
-  // value: T
-
-  unit(): Monad<T>;
-
-  bind<S>(f: (x: T) => Monad<S>): Monad<S>;
-}
+import { Monad } from "./monad";
 
 export class Maybe<T> implements Monad<T> {
   private value?: T;
