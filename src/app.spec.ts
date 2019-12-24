@@ -1,9 +1,11 @@
-import { add } from "./app";
+import { Maybe } from "./app";
 
 describe("app", (): void => {
-  describe("add", (): void => {
+  describe("maybe monad", (): void => {
     it("should be correct", (): void => {
-      expect(add(32, 10)).toBe(42);
+      const x = Maybe.just(10).bind(x => Maybe.just(x + 32));
+
+      expect(x["value"]).toBe(42);
     });
   });
 });
